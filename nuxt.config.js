@@ -1,4 +1,7 @@
+import { map } from 'lodash'
 import pkg from './package'
+import { fileMap } from './static/posts/_json/summary.json'
+import sourceFileNameToUrl from './sourceFileNameToUrl'
 
 export default {
   mode: 'spa',
@@ -26,6 +29,15 @@ export default {
         crossorigin: 'anonymous'
       }
     ]
+  },
+
+  generate: {
+    routes: function (callback) {
+      const routes = map(fileMap, (file, fileName) => {
+        return sourceFileNameToUrl(fileName)
+      })
+      callback(null, routes)
+    }
   },
 
   /*

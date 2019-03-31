@@ -19,8 +19,9 @@
 </template>
 
 <script>
-import { values } from 'lodash'
+import { map } from 'lodash'
 import { fileMap } from '@/static/posts/_json/summary.json'
+import sourceFileNameToUrl from '@/sourceFileNameToUrl'
 const moment = require('moment')
 
 export default {
@@ -31,11 +32,10 @@ export default {
   },
   computed: {
     articles() {
-      const articleArray = values(fileMap).map((item) => {
-        const dirArray = item.dir.split('/')
-        const url = `/${dirArray[1]}/${dirArray[3]}/`
-        const createdAtString = moment(item.created_at).format('YYYY-MM-DD')
-        return Object.assign(item, {
+      const articleArray = map(fileMap, (file, fileName) => {
+        const url = sourceFileNameToUrl(fileName)
+        const createdAtString = moment(file.created_at).format('YYYY-MM-DD')
+        return Object.assign(file, {
           url,
           created_at_string: createdAtString
         })
