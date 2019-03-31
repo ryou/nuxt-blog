@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Test</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <tab-component :tabs="tabs">
+      <template slot-scope="props">
+        <div v-if="props.active === 0">
+          <h1>Tab01</h1>
+          <p>Tab01のコンテンツ</p>
+        </div>
+        <div v-if="props.active === 1">
+          <h1>Tab02</h1>
+          <p>Tab02のコンテンツ</p>
+        </div>
+      </template>
+    </tab-component>
+  </div>
+
+  <script type="text/x-template" id="tpl-tab">
+    <div class="Tab">
+      <div class="Tab_bar">
+        <div v-for="(tab, index) in tabs" class="Tab_btn" :class="{ '-active': index === currentActive }" @click="clickTab(index)">
+          {{ tab }}
+        </div>
+      </div>
+      <div class="Tab_contents">
+        <slot :active="currentActive"></slot>
+      </div>
+    </div>
+  </script>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

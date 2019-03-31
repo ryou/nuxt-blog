@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.Tab {
+
+}
+.Tab_bar {
+  box-shadow: rgba(0, 0, 0, .2) 0 2px 2px;
+
+  display: flex;
+  justify-content: center;
+}
+.Tab_btn {
+  padding: 10px 20px 8px;
+
+  border-bottom: 2px solid transparent;
+}
+.Tab_btn.-active {
+  border-color: #000;
+}
+.Tab_btn:not(.-active) {
+  cursor: pointer;
+}
+.Tab_contents {
+  padding: 20px;
+}

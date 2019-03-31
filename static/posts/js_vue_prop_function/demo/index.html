@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Test</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <table>
+      <tr>
+        <th>経路</th>
+        <td>
+          <ul class="routes">
+            <li v-for="route in routes">
+              <route-component :route="route" :remove="removeRoute"></route-component>
+            </li>
+          </ul>
+          <button type="button" class="add-btn" @click="addRoute">経路追加</button>
+        </td>
+      </tr>
+    </table>
+    <button type="button" class="submit-btn" @click="submit">送信</button>
+  </div>
+
+  <script type="text/x-template" id="tpl-route">
+    <div class="route">
+      <button type="button" class="close-btn" v-if="remove !== null" @click="onClose">×</button>
+      <div class="row">
+        発：<input type="text" v-model="route.start">
+      </div>
+      <div class="row">
+        着：<input type="text" v-model="route.end">
+      </div>
+      <div class="row">
+        費用：<input type="text" v-model="route.cost">
+      </div>
+    </div>
+  </script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

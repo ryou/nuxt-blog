@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  max-width: 960px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  margin: 0 auto;
+}
+
+/* .m-check
+----------------------------------------------------------*/
+.m-check {
+  display: inline-block;
+  vertical-align: middle;
+}
+.m-check_input {
+  display: none;
+}
+.m-check_input:checked + .m-check_body::before {
+  background: #000;
+}
+.m-check_body {
+  position: relative;
+  display: block;
+
+  text-indent: -15px;
+  padding-left: 15px;
+
+  cursor: pointer;
+}
+.m-check_body::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 10px; height: 10px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+
+  margin-right: 5px;
+  background: #fff;
+
+  position: relative;
+  top: -0.15em;
+
+  transition: background-color .15s;
+}
+.m-check_txt {
+}
+
+
+.m-btn {
+  display: inline-block;
+  vertical-align: middle;
+
+  border: 1px solid #000;
+  padding: 5px 10px;
+  background: #000;
+
+  font-size: 13px;
+  color: #fff;
+
+  transition: background-color .3s;
+}
+.m-btn:disabled {
+  opacity: .3;
+}
+.m-btn:not(:disabled) {
+  cursor: pointer;
+}
+.m-btn:not(:disabled):hover {
+  background: #fff;
+  color: #000;
+}
+
+.u-mb10 {
+  margin-bottom: 10px;
+}

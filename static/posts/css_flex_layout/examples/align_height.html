@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+  .m-cardList {
+    /* flex */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    margin: -10px;
+  }
+  .m-cardList_item {
+    /* flex-item */
+    flex-basis: 33.3333333333%;
+
+    /* flex */
+    display: flex;
+
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .m-card {
+    /* flex-item */
+    flex: 1 1 auto;
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #ccc;
+    padding: 10px;
+
+    box-sizing: border-box;
+  }
+  .m-card_photo {
+    margin-bottom: 10px;
+  }
+  .m-card_photo img {
+    max-width: 100%;
+    width: auto;
+  }
+  .m-card_title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .m-card_txt {
+    margin-bottom: 20px;
+  }
+  .m-card_link {
+    display: block;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #000;
+    font-weight: bold;
+
+    /* 余白を割り当てることで下端配置 */
+    margin-top: auto;
+
+    transition: .15s;
+  }
+  .m-card_link:hover {
+    background: #fff;
+    color: #000;
+  }
+  </style>
+</head>
+<body>
+  <div class="l-container">
+    <ul class="m-cardList">
+      <li class="m-cardList_item">
+        <div class="m-card">
+          <div class="m-card_photo"><img src="https://placehold.jp/300x150.png" alt=""></div>
+          <div class="m-card_title">見出し</div>
+          <div class="m-card_txt">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</div>
+          <a href="" class="m-card_link">詳細</a>
+        </div>
+        <!-- /.m-card -->
+      </li>
+      <li class="m-cardList_item">
+        <div class="m-card">
+          <div class="m-card_photo"><img src="https://placehold.jp/300x150.png" alt=""></div>
+          <div class="m-card_title">見出し見出し見出し見出し見出し見出し見出し見出し</div>
+          <div class="m-card_txt">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</div>
+          <a href="" class="m-card_link">詳細</a>
+        </div>
+        <!-- /.m-card -->
+      </li>
+      <li class="m-cardList_item">
+        <div class="m-card">
+          <div class="m-card_photo"><img src="https://placehold.jp/300x150.png" alt=""></div>
+          <div class="m-card_title">見出し</div>
+          <div class="m-card_txt">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</div>
+          <a href="" class="m-card_link">詳細</a>
+        </div>
+        <!-- /.m-card -->
+      </li>
+      <li class="m-cardList_item">
+        <div class="m-card">
+          <div class="m-card_photo"><img src="https://placehold.jp/300x150.png" alt=""></div>
+          <div class="m-card_title">見出し</div>
+          <div class="m-card_txt">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</div>
+          <a href="" class="m-card_link">詳細</a>
+        </div>
+        <!-- /.m-card -->
+      </li>
+      <li class="m-cardList_item">
+        <div class="m-card">
+          <div class="m-card_photo"><img src="https://placehold.jp/300x150.png" alt=""></div>
+          <div class="m-card_title">見出し</div>
+          <div class="m-card_txt">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</div>
+          <a href="" class="m-card_link">詳細</a>
+        </div>
+        <!-- /.m-card -->
+      </li>
+    </ul>
+    <!-- /.m-cardList -->
+  </div>
+  <!-- /.l-container -->
+</body>
+</html>

@@ -1,0 +1,145 @@
+/***********************************************************************
+Reset
+**********************************************************************/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+
+  font-family: inherit;
+  font-size: inherit;
+
+  outline: none;
+}
+
+/***********************************************************************
+Base
+**********************************************************************/
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+/***********************************************************************
+ Component
+**********************************************************************/
+
+/* Container
+----------------------------------------------------------*/
+.Container {
+  max-width: 960px;
+  padding: 40px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Btn
+----------------------------------------------------------*/
+.Btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 88px;
+  min-height: 36px;
+  padding: 5px 16px;
+  border-radius: 3px;
+  box-sizing: border-box;
+
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 5px;
+
+  cursor: pointer;
+
+  transition: background-color .2s;
+}
+.Btn:hover {
+  background-color: rgba(0, 0, 0, .05);
+}
+.Btn__content {
+  font-size: 14px;
+  line-height: 1.0;
+  font-weight: 500;
+}
+.Btn.--primary {
+  background-color: #1abc9c;
+  color: #fff;
+}
+
+/* Ripple
+----------------------------------------------------------*/
+.Ripple {
+  display: block;
+
+  color: inherit;
+  border-radius: inherit;
+
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+.Ripple__animation {
+  display: block;
+
+  color:inherit;
+
+  position: absolute;
+  top: 0; left: 0;
+
+  width: 200%; padding-top: 200%;
+  margin-top: -100%;
+  margin-left: -100%;
+
+  opacity: 0;
+
+  border-radius: 50%;
+  background: currentColor;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+.Ripple__animation.--enter {
+  animation-duration: .6s;
+  animation-name: ripple;
+  animation-timing-function: cubic-bezier(.75,.36,.27,.73);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.0);
+    opacity: .15;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/***********************************************************************
+Utility
+**********************************************************************/
+/* margin
+----------------------------------------------------------*/
+.u-mb20 {
+  margin-bottom: 20px;
+}
+
+/* text-align
+----------------------------------------------------------*/
+.u-align-center {
+  text-align: center;
+}

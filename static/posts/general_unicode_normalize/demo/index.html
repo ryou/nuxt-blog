@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <style>
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, .7);
+  }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <v-app dark>
+      <v-content>
+        <v-container>
+          <v-select
+            :items="options"
+            v-model="charCode"
+            label="元となる文字"
+            bottom
+          ></v-select>
+          <table>
+            <tr>
+              <th>正規化方式</th>
+              <th>結果</th>
+              <th>結果のコードポイント</th>
+            </tr>
+            <tr v-for="normalizeWay in normalizeWays">
+              <th>{{ normalizeWay }}</th>
+              <td>{{ normalized(normalizeWay) }}</td>
+              <td>{{ codePoint(normalizeWay) }}</td>
+            </tr>
+          </table>
+        </v-container>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

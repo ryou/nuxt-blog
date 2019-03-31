@@ -1,0 +1,60 @@
+:root {
+  --safeColor: #2980b9;
+  --warningColor: #f39c12;
+  --dangerColor: #c0392b;
+}
+
+h2 {
+  margin: 40px 0 20px;
+}
+
+.Container {
+  width: 360px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.Table tr:first-child th {
+  border-top: 1px solid #ccc;
+}
+.Table th,
+.Table td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.Table th:not(:first-child),
+.Table td:not(:first-child) {
+  border-left: 1px solid #ccc;
+}
+
+.Tag {
+  display: inline-block;
+  vertical-align: middle;
+
+  min-width: 60px;
+  padding: 5px 10px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  background: #999;
+}
+.Tag.-safe {
+  background-color: var(--safeColor);
+}
+.Tag.-warning {
+  background-color: var(--warningColor);
+}
+.Tag.-danger {
+  background-color: var(--dangerColor);
+}
+
+.u-mb-mid {
+  margin-bottom: 20px;
+}

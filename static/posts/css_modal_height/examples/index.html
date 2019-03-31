@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Test Template</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    button {
+      display: inline-block;
+      border: 0;
+      background: none;
+      font: inherit;
+    }
+
+    .m-modal {
+      position: fixed;
+      z-index: 100;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+    }
+    .m-modal_overlay {
+      background: rgba(0, 0, 0, 0.5);
+
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+    }
+    .m-modal_body {
+      display: flex;
+      flex-direction: column;
+
+      width: 800px; height: 90vh;
+      max-height: 600px;
+      border-radius: 10px;
+      box-sizing: border-box;
+
+      background: #fff;
+      overflow: hidden;
+
+      position: absolute;
+      top: 50vh; left: 50%;
+
+      margin-left: -400px;
+      transform: translateY(-50%);
+    }
+    .m-modal_ttl {
+      padding: 10px;
+
+      background: #ccc;
+
+      font-size: 20px;
+      color: #fff;
+    }
+    .m-modal_content {
+      flex-grow: 1;
+
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      padding: 10px;
+
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .m-modal_btns {
+      text-align: center;
+      padding: 10px;
+    }
+    .m-modal_btn {
+      display: inline-block;
+
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="m-modal">
+    <div class="m-modal_overlay"></div>
+    <div class="m-modal_body">
+      <p class="m-modal_ttl">モーダルタイトル</p>
+      <div class="m-modal_content">
+        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）</p>
+        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）</p>
+      </div>
+      <div class="m-modal_btns">
+        <button type="button" class="m-modal_btn">閉じる</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+</body>
+</html>

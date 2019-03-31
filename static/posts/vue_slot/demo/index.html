@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Test</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <app-component>
+      <template slot="header">
+        Header
+      </template>
+      <template slot="content">
+
+        <div style="margin-bottom: 10px;">
+          <btn-component>Btn</btn-component>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <clock-component>
+            <template slot-scope="time">
+              {{ time.hours }}:{{ time.minutes }}:{{ time.seconds }}
+            </template>
+          </clock-component>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+          <clock-component>
+            <template slot-scope="time">
+              {{ time.hours }}時 {{ time.minutes }}分 {{ time.seconds }}秒
+            </template>
+          </clock-component>
+        </div>
+
+      </template>
+      <template slot="footer">
+        Footer
+      </template>
+    </app-component>
+  </div>
+
+  <script type="text/x-template" id="tpl-clock">
+    <div class="Clock">
+      <div class="Clock_title">時計</div>
+      <div class="Clock_time">
+        <slot :hours="hours" :minutes="minutes" :seconds="seconds"></slot>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-template" id="tpl-app">
+    <div class="App">
+      <div class="App_header">
+        <slot name="header"></slot>
+      </div>
+      <div class="App_content">
+        <div class="App_contentInner">
+          <slot name="content"></slot>
+        </div>
+      </div>
+      <div class="App_footer">
+        <slot name="footer"></slot>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-template" id="tpl-btn">
+    <div class="Btn">
+      <slot></slot>
+    </div>
+  </script>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Test</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <table>
+      <tr>
+        <th>氏名<span class="u-color-red">*</span></th>
+        <td>
+          <input type="text" class="m-input" v-model="form.name">
+        </td>
+      </tr>
+      <tr>
+        <th>性別<span class="u-color-red">*</span></th>
+        <td>
+          <radio-component value="male" v-model="form.sex">男性</radio-component>
+          <radio-component value="female" v-model="form.sex">女性</radio-component>
+        </td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td>
+          <input type="text" class="m-input">
+        </td>
+      </tr>
+    </table>
+    <div class="l-row">
+      <check-component v-model="form.agree">同意する</check-component>
+    </div>
+    <div class="l-row">
+      <button class="m-btn" @click="submit" :disabled="isValid === false">送信</button>
+    </div>
+  </div>
+
+  <script type="text/x-template" id="tpl-check">
+    <label class="m-check">
+      <input
+        type="checkbox"
+        class="m-check_input"
+        :checked="model"
+        @change="update"
+      >
+      <span class="m-check_body"><slot></slot></span>
+    </label>
+  </script>
+  <script type="text/x-template" id="tpl-radio">
+    <label class="m-radio">
+      <input
+        type="radio"
+        class="m-radio_input"
+        :checked="model === value"
+        @change="$emit('update', value)"
+      >
+      <span class="m-radio_body"><slot></slot></span>
+    </label>
+  </script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

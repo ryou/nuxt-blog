@@ -1,0 +1,36 @@
+@import "init";
+@import "reset";
+
+:root {
+  font-size: 62.5%;
+
+  @include screen('sp') {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: sans-serif;
+  font-size: $mainFontSize;
+  line-height: $mainLineHeight;
+  color: $textColor;
+  word-break: break-all;
+
+  background-color: $mainBgColor;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: $linkColor;
+  }
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}

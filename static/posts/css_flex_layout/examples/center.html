@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    .m-btn01 {
+      border: none;
+      background: #000;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .m-modal {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      transition: .2s;
+    }
+    .m-modal.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .m-modal_img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      height: 100%;
+    }
+    .m-modal_img img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="l-container">
+    <button class="m-btn01 js-modal">モーダル</button>
+  </div>
+  <!-- /.l-container -->
+  <div class="m-modal is-hidden">
+    <div class="m-modal_img"><img src="https://placehold.jp/500x500.png" alt=""></div>
+  </div>
+  <!-- /.m-modal -->
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script>
+    ;(function($) {
+      $(function() {
+        $('.js-modal').on('click', function() {
+          $('.m-modal').removeClass('is-hidden');
+        });
+
+        $('.m-modal').on('click', function() {
+          $(this).addClass('is-hidden');
+        });
+      });
+    })(jQuery);
+  </script>
+</body>
+</html>

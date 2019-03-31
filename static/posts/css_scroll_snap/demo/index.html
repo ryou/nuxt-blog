@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  ul {
+    list-style: none;
+  }
+  .slider {
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    scroll-snap-type: mandatory;
+    -webkit-scroll-snap-type: mandatory;
+  }
+  .slider__content {
+    display: flex;
+  }
+  .slider__item {
+    scroll-snap-coordinate: 0% 0%;
+    -webkit-scroll-snap-coordinate: 0% 0%;
+
+    /* iOS11.2時点では、このプロパティがないと動作しない */
+    scroll-snap-align: start;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    padding: 100px;
+    box-sizing: border-box;
+
+    font-size: 14px;
+    color: #fff;
+
+  }
+  .slider__item.-black {
+    background: #000;
+  }
+  .slider__item.-red {
+    background: red;
+  }
+  .slider__item.-blue {
+    background: blue;
+  }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <div class="slider__content">
+      <div class="slider__item -black">01</div>
+      <div class="slider__item -red">02</div>
+      <div class="slider__item -blue">03</div>
+      <div class="slider__item -black">04</div>
+      <div class="slider__item -red">05</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Test Template</title>
+
+  <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-2.1.3.js"></script> -->
+  <script>
+    $(function() {
+      (function() {
+        var $modalBtn = $('.js-modal');
+        var $modal = $('.m-modal');
+        var $overlay = $modal.find('.m-modal_overlay');
+
+        var setPadding = function() {
+          var barW = window.innerWidth - document.body.clientWidth;
+
+          $('body').css({
+            'overflow': 'hidden',
+            'padding-right': barW + 'px'
+          });
+        };
+
+        var reset = function() {
+          $('body').removeAttr('style');
+        };
+
+        $modalBtn.on('click', function() {
+          $modal.fadeIn('fast');
+          setPadding();
+
+          return false;
+        });
+
+        $overlay.on('click', function() {
+          $modal.fadeOut('fast', function() {
+            reset();
+          });
+
+
+          return false;
+        });
+
+      })();
+    });
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      height: 100%;
+    }
+    body {
+      height: 100%;
+      background: #fafafa;
+    }
+    .l-header {
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    .l-header_inner {
+      text-align: right;
+      padding: 10px;
+    }
+    .l-content {
+      background: #fff;
+      width: 960px;
+      margin: 0 auto;
+    }
+    .m-modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+    }
+    .m-modal_overlay {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .m-modal_body {
+      position: absolute;
+      top: 50%; margin-top: -200px;
+      left: 50%; margin-left: -150px;
+      width: 400px; height: 300px;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #fff;
+      border-radius: 5px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <header class="l-header">
+    <div class="l-header_inner">
+      <p>header</p>
+    </div>
+  </header>
+  <div class="l-content" style="height: 10000px;">
+    <button class="js-modal">launch modal</button>
+  </div>
+  <footer class="l-footer">
+  </footer>
+  <div class="m-modal">
+    <div class="m-modal_overlay"></div>
+    <div class="m-modal_body">
+      <p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>
+    </div>
+  </div>
+</body>
+</html>

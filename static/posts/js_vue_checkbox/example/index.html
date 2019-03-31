@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="u-mb10">
+      <check-component
+        :value="isAgree"
+        @input="function(value) {isAgree = value}"
+      >利用規約に同意する</check-component>
+    </div>
+    <div>
+      <btn-component :disabled="!isAgree">登録</btn-component>
+    </div>
+  </div>
+
+  <script type="text/x-template" id="tpl-btn">
+    <button type="button" class="m-btn">
+      <slot></slot>
+    </button>
+  </script>
+  <script type="text/x-template" id="tpl-check">
+    <label class="m-check">
+      <input
+        type="checkbox"
+        class="m-check_input"
+        :checked="value"
+        @change="updateValue($event.target.checked)"
+      >
+      <span class="m-check_body">
+        <span class="m-check_square"></span>
+        <span class="m-check_txt">
+          <slot></slot>
+        </span>
+      </span>
+    </label>
+  </script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

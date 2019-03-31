@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 10px;
+}
+
+.Btn {
+  display: inline-block;
+  vertical-align: middle;
+
+  padding: 10px 20px;
+  border-radius: 5px;
+
+  background: #000;
+  border: 1px solid #000;
+  color: #fff;
+
+  transition: box-shadow .2s;
+}
+.Btn:not(.-disabled):hover {
+  box-shadow: rgba(0, 0, 0, .2) 0 2px 5px;
+  cursor: pointer;
+}
+.Btn.-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+.Btn.-secondary {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+.Btn.-disabled {
+  opacity: .2;
+}

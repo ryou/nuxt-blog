@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  position: relative;
+  background: #000;
+  min-width: 500px;
+}
+.m-svg01 {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100vh;
+
+  transform: scaleY(-1);
+  pointer-events: none;
+}
+
+.m-file-upload01 {
+
+}
+.m-file-upload01__main {
+  display: inline-block;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  vertical-align: top;
+  line-height: 1.2;
+  text-align: right;
+}
+.m-file-upload01__file-name {
+  display: inline-block;
+}
+.m-file-upload01__upload {
+  display: inline-block;
+  margin-left: 10px;
+}
+.m-file-upload01__input {
+  display: none;
+}
+
+.l-tool-area {
+  position: absolute;
+  right: 20px; top: 20px;
+}
+
+.m-overlay01 {
+  position: fixed;
+  z-index: 1000;
+  left: 0; right: 0;
+  bottom: 0; top: 0;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+.m-overlay01.is-hidden {
+  display: none;
+}
+
+.m-overlay01__btn {
+  position: absolute;
+  left: 50%; margin-left: -200px;
+  top: 50%; margin-top: -50px;
+  width: 400px;
+  padding: 50px 10px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+/* .m-bar01
+----------------------------------------------------------*/
+.m-bar01 {
+  display: block;
+  width: 300px; height: 5px;
+  cursor: pointer;
+  background: #fff;
+  overflow: hidden;
+
+  position: relative;
+}
+.m-bar01--short {
+  width: 200px;
+}
+.m-bar01__current {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0; bottom: 0;
+  width: 0;
+  background: linear-gradient(to right, #2980b9, #2ecc71);
+}
+
+
+/* .m-player01
+----------------------------------------------------------*/
+.m-player01 {
+  display: table;
+}
+.m-player01__playBtn {
+  display: table-cell;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.m-player01__progress {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 10px;
+}

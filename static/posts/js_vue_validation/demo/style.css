@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 960px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  margin: 0 auto;
+}
+
+.l-row {
+  display: block;
+}
+
+.u-color-red {
+  color: #f00;
+}
+
+
+table {
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+
+/* m-input
+----------------------------------------------------------*/
+.m-input {
+  display: inline-block;
+  vertical-align: middle;
+
+  border: 1px solid #000;
+  padding: 5px;
+
+  font-size: 14px;
+}
+
+/* m-check
+----------------------------------------------------------*/
+.m-check {
+  display: inline-block;
+  vertical-align: middle;
+}
+.m-check_input {
+  display: none;
+}
+.m-check_body {
+  display: block;
+
+  text-indent: -30px;
+  padding-left: 30px;
+
+  cursor: pointer;
+}
+.m-check_body::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 20px; height: 20px;
+  border: 1px solid #000;
+  background: #fff;
+  box-sizing: border-box;
+
+  transition: background-color .2s;
+
+  position: relative;
+  top: -0.15em;
+
+  margin-right: 10px;
+}
+.m-check_input:checked + .m-check_body::before {
+  background: #000;
+}
+
+/* m-radio
+----------------------------------------------------------*/
+.m-radio {
+  display: inline-block;
+  vertical-align: middle;
+}
+.m-radio_input {
+  display: none;
+}
+.m-radio_body {
+  display: block;
+
+  text-indent: -25px;
+  padding-left: 25px;
+
+  cursor: pointer;
+}
+.m-radio_body::before {
+  content: '';
+
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 20px; height: 20px;
+  border: 1px solid #000;
+  border-radius: 9999px;
+  box-sizing: border-box;
+
+  position: relative;
+  top: -0.15em;
+
+  margin-right: 5px;
+}
+.m-radio_input:checked + .m-radio_body::before {
+  background-image: radial-gradient(#000, #000 40%, #fff 45%, #fff);
+}
+
+
+/* m-btn
+----------------------------------------------------------*/
+.m-btn {
+  display: inline-block;
+  vertical-align: middle;
+
+  border: 1px solid #000;
+  background: #fff;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  padding: 5px 10px;
+}
+.m-btn:hover {
+  background: #000;
+  color: #fff;
+}
+.m-btn:disabled {
+  opacity: .2;
+}
+.m-btn:not(:disabled) {
+  cursor: pointer;
+}

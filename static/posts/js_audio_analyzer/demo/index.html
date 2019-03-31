@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>簡易スペアナ</title>
+
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="m-overlay01">
+      <div class="m-overlay01__btn">音声ファイルを選択してください。</div>
+    </div>
+    <div class="l-tool-area">
+      <div class="m-file-upload01" style="float: right; margin-bottom: 10px;">
+        <input type="file" class="m-file-upload01__input">
+        <div class="m-file-upload01__main">
+          <p class="m-file-upload01__file-name"></p>
+          <div class="m-file-upload01__upload">
+            <i class="fa fa-eject"></i>
+          </div>
+        </div>
+      </div>
+      <div class="m-player01 js-player" style="float: right; clear: both;">
+        <div class="m-player01__playBtn"><i class="fa fa-pause"></i></div>
+        <div class="m-player01__progress">
+          <div class="m-bar01 js-progress">
+            <div class="m-bar01__current"></div>
+          </div>
+        </div>
+      </div>
+      <div class="m-player01 js-volume" style="float: right; clear: both;">
+        <div class="m-player01__playBtn"><i class="fa fa-volume-off"></i></div>
+        <div class="m-player01__progress">
+          <div class="m-bar01 m-bar01--short js-volume">
+            <div class="m-bar01__current"></div>
+          </div>
+        </div>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+    <svg class="m-svg01" width="640" height="255" viewBox="0 0 640 255" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="MyGradient01" gradientTransform="rotate(90)">
+          <stop offset="5%" stop-color="#2980b9" />
+          <stop offset="95%" stop-color="#2ecc71" />
+        </linearGradient>
+      </defs>
+      <polyline
+        class="m-svg01__line"
+        fill="url(#MyGradient01)"
+      ></polyline>
+    </svg>
+
+    <script src="https://use.fontawesome.com/d5e868bfc0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+    <script src="./AudioController.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

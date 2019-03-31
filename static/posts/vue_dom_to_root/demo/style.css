@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  padding: 5px 10px;
+
+  cursor: pointer;
+}
+
+.l-container {
+  padding: 100px;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 0 auto;
+}
+
+
+.ToolTip {
+
+}
+.ToolTip_content {
+  position: absolute;
+
+  display: inline-block;
+
+  padding: 5px 10px;
+  border-radius: 3px;
+
+  background: rgba(0, 0, 0, .8);
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, .2) 2px 2px 10px;
+
+  transform: translate(-50%, -100%);
+
+  opacity: 0;
+  transition: opacity .2s;
+}
+.ToolTip_content.-active {
+  opacity: 1;
+}

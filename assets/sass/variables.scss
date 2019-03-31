@@ -1,0 +1,35 @@
+// color
+// https://dribbble.com/shots/4143481-Flat-UI-Colors-2-Japan
+$blackColor: #3b393c;
+$paleGrayColor: #fcfbf6;
+$grayColor: #ece9e0;
+$deepGrayColor: #69696c;
+$greenColor: #036273;
+$whiteColor: #ffffff;
+
+// semantic color
+$textColor: $blackColor;
+$mainColor: $greenColor;
+$linkColor: $greenColor;
+$mainBgColor: $whiteColor;
+$codeBlockBgColor: $blackColor;
+
+// font size
+$mainFontSize: 1.8rem;
+
+// font family
+$logoFont: 'Allerta Stencil', sans-serif;
+
+// line height
+$mainLineHeight: 1.6;
+$headingLineHeight: 1.5;
+
+// break points
+$spBreakPoint: 767px;
+$tbBreakPoint: 1024px;
+
+// radius
+$formRadius: 3px;
+
+// duration
+$mainAnimationDuration: .2s;

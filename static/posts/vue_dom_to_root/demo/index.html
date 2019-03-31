@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Test</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="l-container">
+      <tool-tip-component>
+        <template slot="activator">
+          <button type="button">Activator</button>
+        </template>
+        ツールチップの中身
+      </tool-tip-component>
+    </div>
+  </div>
+
+  <script type="text/x-template" id="tpl-tool-tip">
+    <span
+      class="ToolTip"
+      @mouseenter="activate"
+      @mouseleave="deactivate"
+    >
+      <slot name="activator"></slot>
+      <div
+        class="ToolTip_content"
+        :class="{
+          '-active': isActive
+        }"
+        :style="contentStyleObj"
+        ref="content"
+      ><slot></slot></div>
+    </span>
+  </script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

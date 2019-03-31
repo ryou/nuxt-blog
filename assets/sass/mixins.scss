@@ -1,0 +1,33 @@
+@import "variables";
+
+@mixin screen($case) {
+  @if $case == 'sp' {
+    @media (max-width: $spBreakPoint) {
+      @content;
+    }
+  } @else if $case == 'tb' {
+    @media (min-width: $spBreakPoint + 1px) and (max-width: $tbBreakPoint) {
+      @content;
+    }
+  } @else if $case == 'pc' {
+    @media (min-width: $tbBreakPoint + 1px) {
+      @content;
+    }
+  }
+};
+
+@mixin container {
+  padding-left: 2.0rem;
+  padding-right: 2.0rem;
+  margin-left: auto;
+  margin-right: auto;
+  @include screen('sp') {
+    max-width: 500px;
+  }
+  @include screen('tb') {
+    max-width: 620px;
+  }
+  @include screen('pc') {
+    max-width: 620px;
+  }
+};
