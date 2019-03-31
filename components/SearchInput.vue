@@ -53,7 +53,6 @@ export default {
 
   display: inline-block;
 
-  width: 100%;
   padding: .5rem;
   border: 1px solid transparent;
   border-radius: $formRadius;
@@ -91,6 +90,10 @@ export default {
   font-size: 1.8rem;
 
   padding-left: 2.5rem;
+  width: 200px;
+  @include screen('sp') {
+    width: 130px;
+  }
 
   outline: 0;
 
