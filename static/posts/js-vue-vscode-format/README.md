@@ -31,7 +31,7 @@ npm i -D eslint eslint-plugin-vue
 
 設定の一例
 
-```
+```js
 module.exports = {
   env: {
     es6: true,
@@ -62,7 +62,7 @@ module.exports = {
 
 以下の内容を追記する。
 
-```
+```js
 [
   ~
   "eslint.autoFixOnSave": true,
@@ -96,7 +96,7 @@ npm i -D husky lint-staged
 
 以下の内容を追加する。
 
-```
+```js
 {
   ~
   "husky": {

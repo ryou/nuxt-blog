@@ -55,6 +55,8 @@ export default {
   font-size: 2.4rem;
   font-family: $logoFont;
   line-height: 1.2;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 .Content {

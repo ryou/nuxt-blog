@@ -1,7 +1,7 @@
 // color
 // https://dribbble.com/shots/4143481-Flat-UI-Colors-2-Japan
 $blackColor: #3b393c;
-$paleGrayColor: #fcfbf6;
+$paleGrayColor: #f6f6f6;
 $grayColor: #ece9e0;
 $deepGrayColor: #69696c;
 $greenColor: #036273;
@@ -12,13 +12,15 @@ $textColor: $blackColor;
 $mainColor: $greenColor;
 $linkColor: $greenColor;
 $mainBgColor: $whiteColor;
-$codeBlockBgColor: $blackColor;
+$codeBlockBgColor: $paleGrayColor;
 
 // font size
 $mainFontSize: 1.8rem;
 
 // font family
+$mainFont: sans-serif;
 $logoFont: 'Allerta Stencil', sans-serif;
+$codeFont: 'Courier New', sans-serif;
 
 // line height
 $mainLineHeight: 1.6;

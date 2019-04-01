@@ -40,11 +40,8 @@ export default {
 }
 .Article_date {
   font-size: 1.6rem;
-  color: $deepGrayColor;
 }
 .Article_content {
-  color: $deepGrayColor;
-
   h1, h2, h3, h4, h5, h6, th {
     color: $textColor;
     line-height: $headingLineHeight;
@@ -109,15 +106,16 @@ export default {
   }
 
   code {
-    display: inline-block;
+    display: inline;
 
+    font-family: $codeFont;
     background-color: $codeBlockBgColor;
-    color: $paleGrayColor;
+    line-height: $mainLineHeight - 0.2;
     padding: 0 .8rem;
-    margin: 0 .2rem;
   }
   pre {
     font-size: 1.5rem;
+    line-height: $mainLineHeight;
     background-color: $codeBlockBgColor;
     padding: 1.0rem;
 
@@ -125,6 +123,7 @@ export default {
     overflow-y: hidden;
 
     code {
+      line-height: inherit;
       padding: 0;
       margin: 0;
     }
