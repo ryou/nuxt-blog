@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/style-resources": "^0.1.2",
     "cross-env": "^5.2.0",
     "lodash": "^4.17.11",
     "mkdirp": "^0.5.1",

@@ -34,8 +34,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/sass/init.scss';
-
 .Article {
 }
 .Article_date {

@@ -67,7 +67,10 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+
+    // 共通でscssファイルをimportさせるためのモジュール
+    '@nuxtjs/style-resources'
   ],
   /*
   ** Axios module configuration
@@ -94,5 +97,11 @@ export default {
         })
       }
     }
+  },
+
+  styleResources: {
+    sass: [
+      '~assets/sass/init.scss'
+    ]
   }
 }
