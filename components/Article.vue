@@ -15,8 +15,26 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .markdown-body {
+  font-size: $mainFontSize;
   color: inherit;
+
+  table {
+    word-break: initial;
+  }
+
+  a {
+    color: $linkColor;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  ul, ol {
+    list-style: initial;
+  }
 }
 </style>
