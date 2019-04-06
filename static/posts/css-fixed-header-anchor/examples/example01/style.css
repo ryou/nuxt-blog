@@ -1,0 +1,7 @@
+:not(.js-scroll-target):target:before {
+    content: '';
+    display: block;
+
+    margin-top: -100px;
+    padding-top: 100px;
+}

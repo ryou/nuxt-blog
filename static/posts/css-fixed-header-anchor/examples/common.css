@@ -1,0 +1,29 @@
+body {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.Header {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0; right: 0;
+
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, .2) 0 0 5px 5px;
+}
+
+.Content {
+    max-width: 600px;
+    padding-top: 100px;
+    margin: 0 auto;
+}
