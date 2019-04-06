@@ -5,6 +5,7 @@
   "author": "",
   "private": true,
   "scripts": {
+    "article:add": "node commands/addArticle.js",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
@@ -25,6 +26,7 @@
     "lodash": "^4.17.11",
     "mkdirp": "^0.5.1",
     "moment": "^2.24.0",
+    "node-fs-extra": "^0.8.2",
     "nuxt": "^2.4.0",
     "processmd": "https://github.com/ryou/processmd.git",
     "rimraf": "^2.6.3"

@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import Article from '@/components/Article'
-import { sourceFileArray } from '@/static/posts/_json/summary.json'
+import Article from '~/components/Article.vue'
+import { sourceFileArray } from '~/static/posts/_json/summary.json'
 const moment = require('moment')
 
 export default {
@@ -28,7 +28,7 @@ export default {
   },
   asyncData({ params }) {
     return {
-      article: require(`@/static/posts/_json/${params.slug}/README.json`)
+      article: require(`~/static/posts/_json/${params.slug}/README.json`)
     }
   },
   head() {

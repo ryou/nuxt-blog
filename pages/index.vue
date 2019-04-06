@@ -20,8 +20,8 @@
 
 <script>
 import { map } from 'lodash'
-import { fileMap } from '@/static/posts/_json/summary.json'
-import sourceFileNameToUrl from '@/sourceFileNameToUrl'
+import { fileMap } from '~/static/posts/_json/summary.json'
+import sourceFileNameToUrl from '~/sourceFileNameToUrl'
 const moment = require('moment')
 
 export default {

@@ -1,22 +1,21 @@
-# nuxt-blog
+# 技術関係のメモブログ
 
-> My supreme Nuxt.js project
+## コマンド
 
-## Build Setup
+### ファイル変更監視&サーバー起動
 
-``` bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn run dev
-
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
+```
+yarn dev
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+### 静的ファイル出力
+
+```
+yarn release
+```
+
+### 記事テンプレート作成
+
+```
+yarn article:add {記事ディレクトリ名}
+```
