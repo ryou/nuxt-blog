@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/sass/init.scss';
+@import '~/assets/sass/init.scss';
 
 .Input {
   position: relative;

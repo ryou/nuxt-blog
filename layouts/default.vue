@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import SearchInput from '@/components/SearchInput'
+import SearchInput from '~/components/SearchInput.vue'
 
 export default {
   components: {
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/sass/base.scss';
+@import '~/assets/sass/base.scss';
 
 .Header {
   padding: 1.0rem 0;

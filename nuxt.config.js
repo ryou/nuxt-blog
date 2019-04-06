@@ -53,7 +53,7 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/sass/init.scss'
+    '~/assets/sass/init.scss'
   ],
 
   /*
