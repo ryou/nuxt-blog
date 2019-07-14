@@ -80,3 +80,36 @@ npx eslint main.js
 それを解決するのが`husky`。`husky`をプロジェクトでインストールしていると`package.json`にフック動作を記述することが出来るのでフック動作をGitで管理することが可能になる。
 
 また、`lint-staged`を利用することで特定の拡張子を持つコミット対象のファイルのみリントの対象とすることが出来るので大体それも一緒に使う。
+
+### ESLintがnpm経由で実行すると、エラーを吐く
+
+```
+{
+  "scripts": {
+    "lint": "eslint main.js"
+  }
+}
+```
+
+とかして、`npm run lint`とかすると、リントエラー時にESLintのエラーメッセージに加えて以下のようなエラーが出力される。
+
+```
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! 8@1.0.0 lint: `eslint main.js`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the 8@1.0.0 lint script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/user/.npm/_logs/2019-07-14T05_53_02_446Z-debug.log
+```
+
+どうもこれはnpm自体のエラーで、ESLintのエラー時にはこのエラーが出るのが正常みたい。ただノイズにはなる。
+
+そういう場合は`npm run -s lint`とすればいいらしい。
+
+[npm scriptsでエラーログを表示させたくない話 - はらへり日記](https://sota1235.hatenablog.com/entry/2016/08/06/210659)
+
+`-s`はnpmのオプションで、npmのエラーを出力させたくない場合に使うみたい。
