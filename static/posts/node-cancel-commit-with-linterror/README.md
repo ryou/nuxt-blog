@@ -113,3 +113,9 @@ npm ERR!     /Users/user/.npm/_logs/2019-07-14T05_53_02_446Z-debug.log
 [npm scriptsでエラーログを表示させたくない話 - はらへり日記](https://sota1235.hatenablog.com/entry/2016/08/06/210659)
 
 `-s`はnpmのオプションで、npmのエラーを出力させたくない場合に使うみたい。
+
+### VueCLIで作られるpackage.jsonには「husky」ではなく「gitHooks」という記述だがあれは？
+
+VueCLIでは`husky`からEvan自らforkした`yorkie`を使っているみたい。
+
+[GitHub - yyx990803/yorkie: Git hooks made easy](https://github.com/yyx990803/yorkie)
