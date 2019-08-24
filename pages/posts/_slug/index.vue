@@ -1,8 +1,9 @@
 <template>
   <div class="Article">
     <div class="Article_date">
-      {{ createdAt }}
+      {{ article.frontmatters.created_at }}
     </div>
+    <div class="Article_title">{{ article.title }}</div>
     <div class="Article_content">
       <Article :html="article.bodyHtml" />
     </div>
@@ -11,20 +12,14 @@
 
 <script>
 import Article from '~/components/Article.vue'
-import { sourceFileArray } from '~/static/posts/_json/summary.json'
-const moment = require('moment')
+import summary from '~/static/posts/_json/summary.json'
 
 export default {
   validate({ params }) {
-    return sourceFileArray.includes(`static/posts/${params.slug}/README.md`)
+    return summary.find(article => article.slug === params.slug)
   },
   components: {
     Article
-  },
-  computed: {
-    createdAt() {
-      return moment(this.article.created_at).format('YYYY-MM-DD')
-    }
   },
   asyncData({ params }) {
     return {
@@ -44,6 +39,13 @@ export default {
 }
 .Article_date {
   font-size: 1.6rem;
+}
+.Article_title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+  margin-bottom: 16px;
 }
 .Article_content {
 }

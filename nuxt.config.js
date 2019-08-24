@@ -1,7 +1,4 @@
-import { map } from 'lodash'
-import pkg from './package'
-import { fileMap } from './static/posts/_json/summary.json'
-import sourceFileNameToUrl from './sourceFileNameToUrl'
+import summary from './static/posts/_json/summary.json'
 
 export default {
   mode: 'spa',
@@ -37,9 +34,7 @@ export default {
 
   generate: {
     routes: function (callback) {
-      const routes = map(fileMap, (file, fileName) => {
-        return sourceFileNameToUrl(fileName)
-      })
+      const routes = summary.map(article => `/posts/${article.slug}`)
       callback(null, routes)
     }
   },

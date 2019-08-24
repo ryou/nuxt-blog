@@ -1,12 +1,12 @@
 <template>
   <div class="MiniArticleList">
-    <div v-for="article in articles" :key="article.url" class="MiniArticleList_item">
+    <div v-for="article in articles" :key="article.slug" class="MiniArticleList_item">
       <div class="MiniArticle">
         <div class="MiniArticle_date">
-          {{ article.created_at_string }}
+          {{ article.frontmatters.created_at }}
         </div>
         <div class="MiniArticle_title">
-          <nuxt-link :to="article.url">
+          <nuxt-link :to="`/posts/${article.slug}`">
             {{ article.title }}
           </nuxt-link>
         </div>
@@ -19,9 +19,7 @@
 </template>
 
 <script>
-import { map } from 'lodash'
-import { fileMap } from '~/static/posts/_json/summary.json'
-import sourceFileNameToUrl from '~/sourceFileNameToUrl'
+import summary from '~/static/posts/_json/summary.json'
 const moment = require('moment')
 
 export default {
@@ -32,23 +30,14 @@ export default {
   },
   computed: {
     articles() {
-      const articleArray = map(fileMap, (file, fileName) => {
-        const url = sourceFileNameToUrl(fileName)
-        const createdAtString = moment(file.created_at).format('YYYY-MM-DD')
-        return Object.assign(file, {
-          url,
-          created_at_string: createdAtString
-        })
-      })
-
-      return articleArray.filter((article) => {
+      return summary.filter((article) => {
         if (this.filter === '') {
           return true
         }
         return article.title.toLowerCase().includes(this.filter.toLowerCase())
       }).sort((a, b) => {
-        const momentA = moment(a.created_at)
-        const momentB = moment(b.created_at)
+        const momentA = moment(a.frontmatters.created_at)
+        const momentB = moment(b.frontmatters.created_at)
 
         if (momentA.isSame(momentB)) return 0
         if (momentA.isBefore(momentB)) return 1
