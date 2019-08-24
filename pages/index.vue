@@ -6,7 +6,7 @@
           {{ article.frontmatters.created_at }}
         </div>
         <div class="MiniArticle_title">
-          <nuxt-link :to="`/posts/${article.slug}`">
+          <nuxt-link :to="`/posts/${article.slug}/`">
             {{ article.title }}
           </nuxt-link>
         </div>
