@@ -14,8 +14,8 @@
     "precommit": "npm run lint",
     "test": "jest",
     "clear:json": "rimraf static/posts/_json && mkdirp static/posts/_json",
-    "processmd": "processmd \"static/posts/**/*.md\" --preview 140 --stdout --outputDir static/posts/_json > static/posts/_json/summary.json",
-    "build:md": "yarn run clear:json && yarn run processmd",
+    "md-blogify": "md-blogify --previewLength 140 --summaryPath static/posts/_json/summary.json static/posts static/posts/_json",
+    "build:md": "yarn run clear:json && yarn run md-blogify",
     "release": "yarn run build:md && yarn run generate"
   },
   "dependencies": {
@@ -24,11 +24,11 @@
     "cross-env": "^5.2.0",
     "github-markdown-css": "^3.0.1",
     "lodash": "^4.17.11",
+    "md-blogify": "https://github.com/ryou/md-blogify.git",
     "mkdirp": "^0.5.1",
     "moment": "^2.24.0",
     "node-fs-extra": "^0.8.2",
     "nuxt": "^2.4.0",
-    "processmd": "https://github.com/ryou/processmd.git",
     "rimraf": "^2.6.3"
   },
   "devDependencies": {
