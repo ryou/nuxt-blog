@@ -15,8 +15,8 @@
     "test": "jest",
     "clear:json": "rimraf static/posts/_json && mkdirp static/posts/_json",
     "md-blogify": "md-blogify --previewLength 140 --summaryPath static/posts/_json/summary.json static/posts static/posts/_json",
-    "build:md": "yarn run clear:json && yarn run md-blogify",
-    "release": "yarn run build:md && yarn run generate"
+    "build:md": "npm run clear:json && npm run md-blogify",
+    "release": "npm run build:md && npm run generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
