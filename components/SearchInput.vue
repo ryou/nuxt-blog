@@ -24,12 +24,12 @@ export default {
   computed: {
     formStateClass() {
       if (this.isFocus) {
-        return [ '-focus' ]
+        return ['-focus']
       }
       if (this.searchText.length > 0) {
-        return [ '-wait' ]
+        return ['-wait']
       }
-      return [ '-idle' ]
+      return ['-idle']
     }
   },
   methods: {
