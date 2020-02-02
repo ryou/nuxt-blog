@@ -1,7 +1,7 @@
 import summary from './static/posts/_json/summary.json'
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
   ** Headers of the page

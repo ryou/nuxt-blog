@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import 'github-markdown-css'
-
 export default {
   props: {
     html: {
