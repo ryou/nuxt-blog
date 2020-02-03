@@ -3,7 +3,9 @@
     <div class="Article_date">
       {{ article.frontmatters.created_at }}
     </div>
-    <div class="Article_title">{{ article.title }}</div>
+    <div class="Article_title">
+      {{ article.title }}
+    </div>
     <div class="Article_content">
       <Article :html="article.bodyHtml" />
     </div>

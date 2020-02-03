@@ -1,13 +1,13 @@
 <template>
-  <form class="Input" :class="formStateClass" @submit.prevent="onSubmit">
+  <form :class="formStateClass" @submit.prevent="onSubmit" class="Input">
     <label class="Input_inner">
       <div class="Input_icon"><i class="fas fa-search" /></div>
       <input
         v-model="searchText"
-        type="text"
-        class="Input_input"
         @focus="isFocus = true"
         @blur="isFocus = false"
+        type="text"
+        class="Input_input"
       >
     </label>
   </form>
