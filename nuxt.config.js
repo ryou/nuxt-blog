@@ -22,8 +22,7 @@ export default {
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: SITE_URL },
       { hid: 'og:title', property: 'og:title', content: SITE_NAME },
-      { hid: 'og:description', property: 'og:description', content: SITE_DESCRIPTION },
-      { hid: 'og:image', property: 'og:image', content: `${SITE_URL}/ogp.jpg` }
+      { hid: 'og:description', property: 'og:description', content: SITE_DESCRIPTION }
     ],
     link: [
       {
