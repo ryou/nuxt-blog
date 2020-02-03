@@ -30,7 +30,9 @@ export default {
   },
   head() {
     return {
-      title: this.title
+      title: this.article.title,
+      meta: [
+      ]
     }
   }
 }

@@ -1,4 +1,5 @@
 import summary from './static/posts/_json/summary.json'
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from './settings/meta'
 
 export default {
   mode: 'universal',
@@ -7,12 +8,21 @@ export default {
   ** Headers of the page
   */
   head: {
+    htmlAttrs: {
+      prefix: 'og: http://ogp.me/ns#'
+    },
     titleTemplate: (title) => {
       return title ? `${title} - SD MILIEU TECH MEMO` : 'SD MILIEU TECH MEMO'
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: SITE_DESCRIPTION },
+      { hid: 'og:site_name', property: 'og:site_name', content: SITE_NAME },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: SITE_URL },
+      { hid: 'og:title', property: 'og:title', content: SITE_NAME },
+      { hid: 'og:description', property: 'og:description', content: SITE_DESCRIPTION }
     ],
     link: [
       {
