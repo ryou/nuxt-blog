@@ -15,27 +15,33 @@
 <script>
 import { SITE_URL } from '~/settings/meta'
 import Article from '~/components/Article.vue'
-import summary from '~/static/posts/_json/summary.json'
+import summaries from '~/static/posts/_json/summary.json'
+
+const getSummaryBySlug = slug => summaries.find(summary => summary.slug === slug)
 
 export default {
   validate({ params }) {
-    return summary.find(article => article.slug === params.slug)
+    return getSummaryBySlug(params.slug)
   },
   components: {
     Article
   },
   asyncData({ params }) {
     return {
+      summary: getSummaryBySlug(params.slug),
       article: require(`~/static/posts/_json/${params.slug}/README.json`)
     }
   },
   head() {
     const title = this.article.title
     const url = `${SITE_URL}${this.$route.path}`
+    const description = `${this.summary.preview}…`
 
     return {
       title,
       meta: [
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'og:description', property: 'og:description', content: description },
         { hid: 'og:type', property: 'og:type', content: 'article' },
         { hid: 'og:title', property: 'og:title', content: title },
         { hid: 'og:url', property: 'og:url', content: url }
