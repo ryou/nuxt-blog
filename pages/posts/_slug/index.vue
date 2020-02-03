@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { SITE_URL } from '~/settings/meta'
 import Article from '~/components/Article.vue'
 import summary from '~/static/posts/_json/summary.json'
 
@@ -29,9 +30,15 @@ export default {
     }
   },
   head() {
+    const title = this.article.title
+    const url = `${SITE_URL}${this.$route.path}`
+
     return {
-      title: this.article.title,
+      title,
       meta: [
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        { hid: 'og:title', property: 'og:title', content: title },
+        { hid: 'og:url', property: 'og:url', content: url }
       ]
     }
   }
