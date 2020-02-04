@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <form action="">
+    <ul>
+      <li>
+        <label class="c-radio">
+          <input type="radio" class="c-radio_input">
+          <span class="c-radio_text">選択肢1</span>
+        </label>
+      </li>
+      <li>
+        <label class="c-radio">
+          <input type="radio" class="c-radio_input" disabled>
+          <span class="c-radio_text">選択肢2</span>
+        </label>
+      </li>
+    </ul>
+
+    <fieldset disabled>
+      <legend>グループタイトル</legend>
+      <ul>
+        <li>
+          <label class="c-radio">
+            <input type="radio" class="c-radio_input">
+            <span class="c-radio_text">選択肢1</span>
+          </label>
+        </li>
+        <li>
+          <label class="c-radio">
+            <input type="radio" class="c-radio_input">
+            <span class="c-radio_text">選択肢2</span>
+          </label>
+        </li>
+      </ul>
+    </fieldset>
+
+    <fieldset disabled>
+      <legend>指定時間帯</legend>
+      <select>
+        <option>9:00</option>
+      </select>
+      ~
+      <select>
+        <option>12:00</option>
+      </select>
+    </fieldset>
+
+    <button>submit</button>
+  </form>
+</body>
+</html>

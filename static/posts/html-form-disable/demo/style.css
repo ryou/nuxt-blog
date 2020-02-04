@@ -1,0 +1,34 @@
+:root {
+  --disable-opacity: 0.3;
+}
+
+.c-radio {
+  display: inline-block;
+}
+
+.c-radio_input {
+
+}
+
+.c-radio_text {
+
+}
+
+/* フォームパーツ単体でdisabled指定された場合のスタイル */
+.c-radio_input:disabled,
+.c-radio_input:disabled ~ *,
+select:disabled {
+  opacity: var(--disable-opacity);
+}
+
+/* fieldset単位でdisabled指定された場合のスタイル */
+fieldset:disabled {
+  opacity: var(--disable-opacity);
+}
+
+/* 二重でopacityがかからないように、打ち消す必要がある */
+fieldset:disabled .c-radio_input:disabled,
+fieldset:disabled .c-radio_input:disabled ~ *,
+fieldset:disabled select:disabled {
+  opacity: initial;
+}
