@@ -45,3 +45,26 @@ nodenv local [使用するNode.jsのバージョン]
 # デフォルトで使用するのNode.jsバージョンを指定
 nodenv global [使用するNode.jsのバージョン]
 ```
+
+## おすすめプラグイン
+
+下に挙げるプラグイン以外にも色々便利そうなものはあるので（`nodenv-default-packages` とかも便利そう）nodenv公式リポジトリは一通り見たらいいかも
+
+### nodenv-package-rehash
+
+https://github.com/nodenv/nodenv-package-rehash
+
+nodenvは `~/.nodenv/shims` にnodeやグローバルインストールされたパッケージのエントリポイントが存在している。つまりここに各コマンドに対応したファイルが存在していないとコマンドが実行できない。
+
+shimsの更新は `nodenv init` や `nodenv rehash` が実行された際に行われているみたいで、パッケージをグローバルインストールしたはいいものの前述のコマンドの実行やターミナル再起動を忘れて「何故か知らないけどコマンドが実行できない」みたいな状況が発生する（発生した。
+
+このプラグインを入れるとパッケージのグローバルインストールに自動的に `nodenv rehash` してくれる。便利
+
+### nodenv-package-json-engine
+
+https://github.com/nodenv/nodenv-package-json-engine
+
+package.jsonのenginesフィールドに従い、nodeのバージョンを自動で切り替えてくれる。 `.node-version` で事足りるという話もあるが、個人的にenginesフィールドあるんだからそっち使ったらいいじゃんという気持ちなのでありがたい。
+
+注意点としては、yarnはenginesフィールド通りのnodeバージョンじゃないとエラーが出て諸々のコマンドが失敗してしまう。  
+nodeのバージョン管理はしないようなチームの方針だったりすると面倒なので、その場合は `.node-version` ファイルでやったほうがいい。
